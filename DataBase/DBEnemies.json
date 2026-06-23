@@ -1,0 +1,71 @@
+{
+  "$schema": "./Schemas/enemies-schema.json",
+  "enemies": [
+    {
+      "id": "9100001",
+      "name": "Chibi Nobu",
+      "attribute": "Man",
+      "traits": ["Nobunaga", "Humanoid", "BronzeUnit"]
+    },
+      {
+        "id": "9930100",
+        "name": "Skeleton",
+        "attribute": "Man",
+        "traits": ["Undead", "Soldier", "Skeleton", "Demonic", "BronzeUnit"]
+      },
+    {
+      "id": "9100050",
+      "name": "Great Dragon",
+      "attribute": "Earth",
+      "traits": ["DemonBeast", "Dragon", "SuperLarge"]
+    },
+    {
+      "id": "9100057",
+      "name": "Wyvern",
+      "attribute": "Earth",
+      "traits": ["DemonBeast", "Dragon", "BronzeUnit"]
+    },
+    {
+      "id": "9936790",
+      "name": "Ifreeta",
+      "attribute": "Earth",
+      "traits": ["Female", "DemonBeast", "Demonic"]
+    },
+    {
+      "id": "9939610",
+      "name": "Dark Samurai",
+      "attribute": "Sky",
+      "traits": ["Undead", "Humanoid", "Demonic"]
+    },
+    {
+      "id": "9940750",
+      "name": "Shantak",
+      "attribute": "Earth",
+      "traits": ["WildBeast", "Demonic"]
+    },
+    {
+      "id": "9941690",
+      "name": "Monkey",
+      "attribute": "Earth",
+      "traits": ["WildBeast", "Demonic", "BronzeUnit"]
+    },
+    {
+      "id": "9941700",
+      "name": "Hot Spring Monkey",
+      "attribute": "Earth",
+      "traits": ["WildBeast", "Demonic", "SilverUnit"]
+    },
+    {
+      "id": "9942650",
+      "name": "Taiouki",
+      "attribute": "Earth",
+      "traits": ["Oni", "Demonic", "SuperLarge", "Giant"]
+    },
+    {
+      "id": "9943140",
+      "name": "Shark Pirate",
+      "attribute": "Earth",
+      "traits": ["WildBeast", "BronzeUnit"]
+    }
+  ]
+}

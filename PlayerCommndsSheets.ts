@@ -1,0 +1,300 @@
+import { StyleSheet } from 'react-native';
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#041d20', 
+    flexDirection: 'row', 
+  },
+  leftMainContainer: {
+    flex: 1,
+    paddingHorizontal: 25,
+    paddingVertical: 15,
+    justifyContent: 'space-between',
+  },
+  queueWrapper: { 
+    height: 40, 
+    justifyContent: 'center', 
+    marginTop: 5 
+  },
+  queueContainer: { 
+    flexDirection: 'row', 
+    gap: 6, 
+    alignItems: 'center' 
+  },
+  miniQueueIcon: { 
+    paddingHorizontal: 8,
+    height: 32, 
+    borderRadius: 8, 
+    justifyContent: 'center', 
+    alignItems: 'center', 
+    borderWidth: 1, 
+    borderColor: 'transparent',
+    minWidth: 32,
+  },
+  miniQueueIconSelected: { 
+    borderColor: '#ffffff', 
+    borderWidth: 2, 
+    transform: [{ scale: 1.05 }] 
+  },
+  miniQueueText: { 
+    color: '#fff', 
+    fontSize: 11, 
+    fontWeight: 'bold' 
+  },
+  actionRow: {
+    flexDirection: 'row',
+    gap: 12,
+    alignItems: 'center',
+  },
+  pillButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 22,
+    borderRadius: 25,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  disabledPill: {
+    backgroundColor: '#0a2325',
+    borderWidth: 1,
+    borderColor: '#133336',
+  },
+  disabledPillText: {
+    color: '#3f5a5c',
+    fontWeight: '600',
+    fontSize: 13,
+  },
+  activeDeletePill: { 
+    backgroundColor: '#c0392b' 
+  },
+  activeDeletePillText: { 
+    color: '#fff', 
+    fontWeight: 'bold' 
+  },
+  darkPill: {
+    backgroundColor: '#123033',
+  },
+  darkPillText: {
+    color: '#89aaad',
+    fontWeight: '600',
+    fontSize: 13,
+  },
+  lightBluePill: {
+    backgroundColor: '#a3d3f5',
+  },
+  lightBluePillText: {
+    color: '#041d20',
+    fontWeight: 'bold',
+    fontSize: 14,
+  },
+  servantsRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingRight: 40,
+    marginBottom: 10,
+  },
+  servantBlock: {
+    alignItems: 'center',
+    gap: 6,
+    width: 150,
+  },
+  gaugeBlockContainer: {
+    width: '100%',
+    gap: 4,
+    marginBottom: 2,
+    alignItems: 'center',
+  },
+  gaugeBlockSpacer: {
+    height: 40,
+    justifyContent: 'center',
+  },
+  hpGaugeOutline: {
+    width: '100%',
+    height: 18,
+    borderWidth: 1.5,
+    borderColor: '#2ecc71',
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  npGaugeOutline: {
+    width: '100%',
+    height: 18,
+    borderWidth: 1.5,
+    borderColor: '#f1c40f',
+    borderRadius: 4,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'transparent',
+  },
+  gaugeText: {
+    color: '#ffffff',
+    fontSize: 10,
+    fontWeight: 'bold',
+  },
+  gaugeTextEmpty: {
+    color: '#3f5a5c',
+    fontSize: 12,
+  },
+  skillsContainer: {
+    flexDirection: 'row',
+    gap: 8,
+  },
+  skillSquare: {
+    width: 44,
+    height: 44,
+    borderRadius: 12,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  skillSquareLocked: {
+    backgroundColor: '#1c1c1c',
+    opacity: 0.65,
+    borderWidth: 1,
+    borderColor: '#3a3a3a',
+    transform: [{ scale: 0.95 }],
+  },
+  skillDisabled: {
+    backgroundColor: '#0a2325',
+    opacity: 0.2,
+  },
+  cooldownOverlay: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  cooldownNumberText: {
+    color: '#e74c3c',
+    fontSize: 18,
+    fontWeight: '900',
+    textShadowColor: 'rgba(0, 0, 0, 0.8)',
+    textShadowOffset: { width: 1, height: 1 },
+    textShadowRadius: 2,
+  },
+  redSkill: { backgroundColor: '#b52a2a' },
+  blueSkill: { backgroundColor: '#1a6fa3' },
+  orangeSkill: { backgroundColor: '#d66e15' },
+  skillText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
+  },
+  servantLabel: {
+    color: '#a5c4c7',
+    fontSize: 13,
+    fontWeight: '500',
+    textAlign: 'center',
+    width: '100%',
+    marginTop: 4,     // 👈 Pequeno espaçamento entre as skills e o nome
+    marginBottom: 16,  // 👈 Cria a folga exata abaixo do nome para caber mais uma linha de texto futuramente
+  },
+  rightSidebar: {
+    width: 140,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 20,
+    paddingRight: 25,
+  },
+  masterSkillsButton: {
+    backgroundColor: '#07484a',
+    width: 95,
+    height: 52,
+    borderRadius: 26,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    left: -20,
+    top: 120,
+  },
+  masterSkillsText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 13,
+    fontWeight: 'bold',
+    lineHeight: 16,
+  },
+  attackButton: {
+    backgroundColor: '#3498db',
+    width: 96,
+    height: 96,
+    borderRadius: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
+    position: 'relative',
+    left: -20,
+    top: -20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.3,
+    shadowRadius: 3,
+    elevation: 4,
+  },
+  attackText: {
+    color: '#fff',
+    fontSize: 15,
+    fontWeight: 'bold',
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.75)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContent: {
+    backgroundColor: '#05292d',
+    borderWidth: 1,
+    borderColor: '#0b4d52',
+    padding: 22,
+    borderRadius: 16,
+    width: '55%',
+    alignItems: 'center',
+    gap: 12,
+  },
+  modalTitle: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
+    marginBottom: 8,
+  },
+  npButton: {
+    width: '100%',
+    paddingVertical: 10,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  redButton: { backgroundColor: '#b52a2a' },
+  blueButton: { backgroundColor: '#1a6fa3' },
+  orangeButton: { backgroundColor: '#d66e15' },
+  npButtonDisabled: {
+    backgroundColor: '#0c2224',
+    opacity: 0.3,
+  },
+  npServantText: {
+    color: '#ffffff',
+    fontWeight: '800',
+    fontSize: 14,
+    marginBottom: 1,
+  },
+  npNameText: {
+    color: '#ffe599',
+    fontWeight: '600',
+    fontSize: 12,
+    fontStyle: 'italic',
+  },
+  targetButton: {
+    width: '100%',
+    paddingVertical: 12,
+    borderRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  targetButtonText: {
+    color: '#ffffff',
+    fontWeight: '800',
+    fontSize: 15,
+  },
+});

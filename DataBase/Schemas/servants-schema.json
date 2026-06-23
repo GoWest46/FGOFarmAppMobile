@@ -1,0 +1,320 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FGO Servants Database Schema",
+  "type": "object",
+  "required": ["servants"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "servants": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          { "$ref": "#/$defs/servant" },
+          { "$ref": "#/$defs/schemaComment" }
+        ]
+      }
+    }
+  },
+
+  "$defs": {
+    "schemaComment": {
+      "type": "object",
+      "required": ["$comment"],
+      "additionalProperties": false,
+      "properties": {
+        "$comment": { "type": "string" }
+      }
+    },
+    "servant": {
+      "type": "object",
+      "required": [
+        "id", 
+        "name", 
+        "className", 
+        "baseAtk", 
+        "baseHP", 
+        "baseStarGen", 
+        "baseNpGen", 
+        "attribute",
+        "traits", 
+        "personalSkills", 
+        "noblePhantasm"
+      ],
+      "properties": {
+        "id": { "type": "string", "pattern": "^[0-9]+$" },
+        "name": { "type": "string" },
+        "className": { "type": "string", "enum": ["Saber", "Archer", "Lancer", "Rider", "Caster", "Assassin", "Berserker", "Ruler", "Avenger", "AlterEgo", "MoonCancer", "Foreigner", "Pretender", "Draco", "SpaceEresh", "UOlga"] },
+        "baseAtk": { "type": "integer", "minimum": 0 },
+        "baseHP": { "type": "integer", "minimum": 0 },
+        "baseStarGen": { "type": "number", "minimum": 0 },
+        "baseNpGen": { "type": "number", "minimum": 0 },
+        "attribute": {
+          "type": "string",
+          "enum": ["Man", "Earth", "Sky", "Star", "Beast"]
+        },
+        "traits": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "enum": [
+              "Male", "Female", "FeminineLooking", 
+              "Lawful", "Neutral", "Chaotic", "Good", "Balanced", "Evil", "Insane", "Summer",
+              "Amazoness", "AnimalCharacteristics", "ArgoRelated", "Arthur", "ArtificialDemon", "ArtoriaCaster", "ArtoriaFace", "Automata", 
+              "BeautifulBoy", "Bunny", 
+              "Caenis", "Child", "ConsortYu", "CostumeOwning", 
+              "Defender", "DemiServant", "Demon", "DemonBeast", "DemonGodPillar", "Demonic", "DemonicBeast", "Divinity", "Dragon", "DragonSlayer", 
+              "ExistenceOutsidetheDomain", 
+              "Fae", "FairyTale", "FateStayNight", 
+              "Genji", "Ghost", "Giant", "Goddess", "GreekMythologyMale", "Group", 
+              "Hominidae", "Human", "Humanoid", 
+              "Illya", "ImmunetoPigify", 
+              "King", 
+              "Levitating", "LivingHuman", "LovedOne", 
+              "Mechanical", "Moon", "MountLiang", 
+              "Nobunaga", "Non-Animal", "NonHominidae", 
+              "ObstacleMaker", "Oni", 
+              "PseudoServant", 
+              "Riding", "Roman", "RoundTableKnight", 
+              "Saber", "SakuraSeries", "Serpent", "Servant", "SevenClasses", "ShadowServant", "Shinsengumi", "ShutenDoji", "Skeleton", "Soldier", "SummerMode", "SuperLarge", 
+              "ThreattoHumanity", 
+              "Undead", 
+              "Valkyrie", 
+              "WeakEnumaElish", "Werebeast", "WildBeast", 
+              "Zombie", 
+              "3StarorLower"
+            ]
+          }
+        },
+        "classSkills": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["effects"],
+            "properties": {
+              "effects": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/effect" }
+              }
+            }
+          }
+        },
+        "personalSkills": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 3,
+          "items": {
+            "type": "object",
+            "required": ["name", "slot", "effects", "baseCooldown"],
+            "properties": {
+              "name": { "type": "string" },
+              "slot": { "type": "string", "enum": ["S1", "S2", "S3"] },
+              "effects": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/effect" }
+              },
+              "baseCooldown": { "$ref": "#/$defs/cooldownArray" }
+            }
+          }
+        },
+        "noblePhantasm": {
+          "type": "object",
+          "required": ["nameNP", "cardType"],
+          "properties": {
+            "nameNP": { "type": "string" },
+            "OneEnemySituation": { "type": "string", "enum": ["True", "False"] },
+            "cardType": { "type": "string", "enum": ["Buster", "Arts", "Quick"] },
+            "DamageCategory": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["cardType", "power"],
+                "properties": {
+                  "cardType": { "type": "string", "enum": ["Buster", "Arts", "Quick"] },
+                  "power": {
+                    "type": "object",
+                    "required": ["target", "hitCount", "hitDistribution", "scalingType", "damageValues"],
+                    "properties": {
+                      "target": { "type": "string", "enum": ["one_enemy", "all_enemies"] },
+                      "hitCount": { "type": "integer", "minimum": 1 },
+                      "hitDistribution": {
+                        "type": "array",
+                        "items": { "type": "integer" }
+                      },
+                      "scalingType": { "type": "string", "enum": ["npLevel", "fixed"] },
+                      "damageValues": {
+                        "type": "array",
+                        "minItems": 5,
+                        "maxItems": 5,
+                        "items": { "type": "number" }
+                      }
+                    }
+                  },
+                  "extraDamage": {
+                    "type": "object",
+                    "required": ["dmgAgainst", "scalingType", "values"],
+                    "properties": {
+                      "dmgAgainst": {
+                        "type": "object",
+                        "required": ["traits"],
+                        "properties": {
+                          "traits": {
+                            "type": "array",
+                            "items": { "type": "string" }
+                          }
+                        }
+                      },
+                      "scalingType": { "type": "string", "enum": ["fixed", "skillLevel", "oc", "npLevel"] },
+                      "values": {
+                        "type": "array",
+                        "minItems": 5,
+                        "maxItems": 5,
+                        "items": { "type": "number" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "patternProperties": {
+            "^effects(_[0-9]+)?$": {
+              "type": "array",
+              "items": { "$ref": "#/$defs/effect" }
+            }
+          }
+        }
+      }
+    },
+
+    "effect": {
+      "type": "object",
+      "required": ["type", "target", "scalingType"],
+      "properties": {
+        "Clovis": {
+          "type": "object",
+          "required": ["scalingType"],
+          "properties": {
+            "scalingType": { "type": "string", "enum": ["fixed", "skillLevel"] },
+            "value": { "type": "number" },
+            "values": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 10,
+              "items": { "type": "number" }
+            }
+          }
+        },
+        "type": {
+          "type": "string",
+          "enum": [
+            "atkUp", "quickPerformUp", "artsPerformUp", "busterPerformUp", "dmgAdd", "antiDmgUp", "hitCountUp", "npDmgUp", "npDmgBoostUp", "ocStageUp", 
+            "npGenUp", "npRegen", "npCharge", "npMultiply", "starGain", "starGenUp", "starRegen", "defUp", 
+            "dmgCut", "npDmgResUp", "evasion", "invul", "antiPurge", "debuffImmun", "cardResUp", "cdReduct", "buffSuccUp",
+            "buffOnAttack", "debuffOnAttack", "buffDelayed", "buffRegen", "onGuts", "onDeath", "enterField", 
+            "enterTurn", "heal", "hpRegen", "guts", "maxHPUp", "healRateUp", "healPowerUp", "DoTHeal", 
+            "stageChange", "stun", "bond", "petrify", "charm", "sleep", "skillSeal", "atkDown", "npDmgDown", 
+            "npDmgResDown", "defDown", "dmgRec", "cardResDown", "terror", "confusion", "healRateDown", 
+            "healloss", "heallossTurn", "burn", "curse", "poison", "burnAmp", "curseAmp", "poisonAmp", 
+            "buffBlock", "debuffDelayed", "debuffExtend", "traitAdd", "classChange", "classAffinityChange", 
+            "blessingOfKur", "pigify", "wrathOfEnshrinedDeity", "princeInAWhiteHorse", "bravePrincess", 
+            "holyGrailHolding", "underTheMoonlight", "underTheSun", "wrathoftheElemental", "preservationTarget", 
+            "pastAlteration", "heartfeltBlaze", "manuscritpCompletion", "thirstforVengence", "Bewitchment", 
+            "magicBullet", "swordSheathingInstance", "heroicKing"
+          ]
+        },
+        "target": { 
+          "type": "string", 
+          "enum": ["self", "except_self", "one_ally", "party", "one_enemy", "all_enemies", "field", "star_Count"] 
+        },
+        "cardType": { "type": "string", "enum": ["Buster", "Arts", "Quick", "Extra"] },
+        "durationAttacks": { "type": "integer", "minimum": 1 },
+        "durationTurns": { "type": "integer", "minimum": 1 },
+        "scalingType": { "type": "string", "enum": ["fixed", "skillLevel", "npLevel", "oc"] },
+        "value": { "type": "number" },
+        "values": {
+          "type": "array",
+          "minItems": 1,
+          "maxItems": 10,
+          "items": { "type": "number" }
+        },
+        "overrideCategory": { "$ref": "#/$defs/effectCategory" },
+        "overrideSubCategory": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/effectSubCategory" }
+        },
+        "overrideRemovable": { "type": "boolean" },
+        "metaString": { "type": "string" },
+        "cleanCount": { "type": "integer", "minimum": 1 },
+        "searchQuery": { "$ref": "#/$defs/effectSearchQuery" },
+        "conditions": { "$ref": "#/$defs/effectCondition" },
+        "subEffects": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/effect" }
+        }
+      }
+    },
+
+    "effectCategory": {
+      "type": "string",
+      "enum": ["Buff", "Debuff", "Healing", "None"]
+    },
+
+    "effectSubCategory": {
+      "type": "string",
+      "enum": ["Offensive", "Defensive", "Mental", "Ailment", "Lockdown", "Immobility", "Sealing", "Heal", "Damage", "Demerit"]
+    },
+
+    "effectSearchQuery": {
+      "type": "object",
+      "properties": {
+        "byType": { "type": "string" },
+        "byCategory": { "$ref": "#/$defs/effectCategory" },
+        "bySubCategory": { "$ref": "#/$defs/effectSubCategory" }
+      }
+    },
+
+    "effectCondition": {
+      "type": "object",
+      "properties": {
+        "enemyTargetCondition": {
+          "type": "object",
+          "properties": {
+            "hasTraits": { "type": "array", "items": { "type": "string" } },
+            "hasAttribute": { "type": "array", "items": { "type": "string" } },
+            "hasClasses": { "type": "array", "items": { "type": "string" } },
+            "hasEffect": { "$ref": "#/$defs/effectSearchQuery" }
+          }
+        },
+        "applyCondition": {
+          "type": "object",
+          "properties": {
+            "fieldCondition": { "type": "array", "items": { "type": "string" } },
+            "hasAttributes": { "type": "array", "items": { "type": "string" } },
+            "hasTraits": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+        "activationCondition": {
+          "type": "object",
+          "properties": {
+            "hpLessThanPercent": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        },
+        "skillUsageCondition": {
+          "type": "object",
+          "properties": {
+            "requireStarCount": { "type": "integer", "minimum": 0 },
+            "hpLessThanPercent": { "type": "number", "minimum": 0, "maximum": 100 }
+          }
+        }
+      }
+    },
+
+    "cooldownArray": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10,
+      "items": { "type": "integer", "minimum": 1, "maximum": 15 }
+    }
+  }
+}

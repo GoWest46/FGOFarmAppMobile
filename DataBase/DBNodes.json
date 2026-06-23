@@ -1,0 +1,79 @@
+{
+  "$schema": "./Schemas/nodes-schema.json",
+  "nodes": [
+    {
+      "id": "node_fuyuki_x_a",
+      "name": "Fuyuki - Point X-A",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "fields": ["Burning"],
+          "enemies": [
+            { "enemyBaseId": "9930100", "customClass": "Saber", "customHp": 4500 },
+            { "enemyBaseId": "9930100", "customClass": "Lancer", "customHp": 4800 },
+            { "enemyBaseId": "9930100", "customClass": "Saber", "customHp": 4500 }
+          ]
+        },
+        {
+          "waveNumber": 2,
+          "fields": ["Burning"],
+          "enemies": [
+            { "enemyBaseId": "9930100", "customClass": "Saber", "customHp": 6200 },
+            { "enemyBaseId": "9930100", "customClass": "Archer", "customHp": 7500 },
+            { "enemyBaseId": "9930100", "customClass": "Saber", "customHp": 6200 }
+          ]
+        },
+        {
+          "waveNumber": 3,
+          "fields": ["Burning", "City"],
+          "enemies": [
+            { "enemyBaseId": "9100057", "customClass": "Rider", "customHp": 28000 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "node_dragon_lair",
+      "name": "Dragon's Lair (Custom Node)",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "fields": ["Forest"],
+          "enemies": [
+            { "enemyBaseId": "e2", "customClass": "Berserker", "customHp": 150000 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "94098810",
+      "name": "Dancing Dragon 90++",
+      "waves": [
+        {
+          "waveNumber": 1,
+          "fields": ["City", "Darkness"],
+          "enemies": [
+            { "enemyBaseId": "9942650", "customClass": "Rider", "customHp": 300317 }
+          ]
+        },
+        {
+          "waveNumber": 2,
+          "fields": ["City", "Darkness"],
+          "enemies": [
+            { "enemyBaseId": "9943140", "customClass": "Rider", "customHp": 60613 },
+            { "enemyBaseId": "9939610", "customClass": "Rider", "customHp": 65247 }
+          ]
+        },
+        {
+          "waveNumber": 3,
+          "fields": ["City", "Darkness"],
+          "enemies": [
+            { "enemyBaseId": "9939610", "customClass": "Rider", "customHp": 60613 },
+            { "id": "0281", "customClass": "Foreigner", "customHp": 779600 },
+            { "enemyBaseId": "9943140", "customClass": "Rider", "customHp": 65247 }
+          ]
+        }
+      ]
+    }
+  ]
+}

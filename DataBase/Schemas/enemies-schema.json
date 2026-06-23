@@ -1,0 +1,76 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FGO Enemies Database Schema",
+  "type": "object",
+  "required": ["enemies"],
+  "properties": {
+    "enemies": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Enemy" }
+    }
+  },
+  "definitions": {
+    "Enemy": {
+      "type": "object",
+      "required": ["id", "name", "attribute", "traits"],
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "attribute": {
+          "type": "string",
+          "enum": ["Sky", "Earth", "Man", "Star", "Beast"]
+        },
+        "traits": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "classSkills": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ClassSkill" }
+        }
+      }
+    },
+    "ClassSkill": {
+      "type": "object",
+      "required": ["effects"],
+      "properties": {
+        "name": { "type": "string" },
+        "effects": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Effect" }
+        }
+      }
+    },
+    "Effect": {
+      "type": "object",
+      "required": ["type", "target"],
+      "properties": {
+        "type": { 
+          "type": "string",
+          "enum": [
+            "atkUp", "defUp", "damageUp", "npDamage", "busterPerform", "artsPerform", "quickPerform",
+            "npCharge", "npChargeRefund", "starsGain", "buffOnAttack", "debuffResistance", 
+            "npDmgUp", "healRateUp", "npGenUp", "heal"
+          ]
+        },
+        "target": { "type": "string", "enum": ["self", "party", "enemies", "singleEnemy"] },
+        "scalingType": { "type": "string", "enum": ["skillLevel", "npLevel", "OC", "fixed"] },
+        "durationTurns": { "type": "integer", "minimum": 1 },
+        "durationAttacks": { "type": "integer", "minimum": 1 },
+        "value": { "type": "number" },
+        "values": {
+          "type": "array",
+          "items": { "type": "number" }
+        },
+        "defaultRemovable": { "type": "boolean" },
+        "priorToDamage": { "type": "boolean" },
+        "metaString": { "type": "string" },
+        "executionTiming": { "type": "string" },
+        "subEffects": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Effect" }
+        }
+      }
+    }
+  }
+}

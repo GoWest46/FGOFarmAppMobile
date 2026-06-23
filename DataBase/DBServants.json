@@ -1,0 +1,860 @@
+{
+  "$schema": "./Schemas/servants-schema.json",
+  "servants": [
+    
+{
+  "id": "0002",
+  "name": "Artoria Pendragon",
+  "className": "Saber",
+  "baseAtk": 11221,
+  "baseHP": 15150,
+  "baseStarGen": 10.0,
+  "baseNpGen": 0.86,
+  "attribute": "Earth",
+  "traits": ["Lawful", "Good", "Female", "Arthur", "ArtoriaFace", "CostumeOwning", "Dragon", "Humanoid", "King", "Riding", "RoundTableKnight", "Servant", "SevenClasses", "WeakEnumaElish"],
+  "classSkills": [
+        {
+          "effects": [
+            {
+              "type": "quickPerformUp",
+              "target": "self",
+              "value": 8,
+              "scalingType": "fixed",
+              "overrideRemovable": false
+            }
+          ]
+        }
+      ],
+  "personalSkills": [
+    {
+      "name": "Charisma B",
+      "slot": "S1",
+      "effects": [
+        {
+          "type": "atkUp",
+          "target": "party",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [9, 9.9, 10.8, 11.7, 12.6, 13.5, 14.4, 15.3, 16.2, 18.0]
+        }
+      ],
+      "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+    },
+    {
+      "name": "Dragon Reactor Core B",
+      "slot": "S2",
+      "effects": [
+        {
+          "type": "busterPerformUp",
+          "target": "self",
+          "durationTurns": 1,
+          "scalingType": "skillLevel",
+          "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+        },
+        {
+          "type": "npDmgUp",
+          "target": "self",
+          "durationTurns": 1,
+          "scalingType": "skillLevel",
+          "values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 30]
+        }
+      ],
+      "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+    },
+    {
+      "name": "Radiant Road EX",
+      "slot": "S3",
+      "effects": [
+        {
+          "type": "npCharge",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 30]
+        }
+      ],
+      "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+    }
+  ],
+  "noblePhantasm": {
+    "nameNP": "Excalibur",
+    "cardType": "Buster",
+    "DamageCategory": [
+      {
+        "cardType": "Buster",
+        "power": {
+        "target": "all_enemies",
+        "hitCount": 1,
+        "hitDistribution": [100],
+        "scalingType": "npLevel",
+        "damageValues": [400, 500, 550, 575, 600]
+        }
+      }
+    ],
+    "effects": [
+      {
+        "type": "npCharge",
+        "target": "self",
+        "scalingType": "oc",
+        "values": [20, 27.5, 35, 42.5, 50]
+      }
+    ]
+  }
+},
+  
+{
+      "id": "0003",
+      "name": "Artoria Pendragon (Alter)",
+      "className": "Saber",
+      "baseAtk": 10248,
+      "baseHP": 11589,
+      "baseStarGen": 10.0,
+      "baseNpGen": 0.86,
+      "attribute": "Earth",
+      "traits": ["Lawful", "Evil", "Female", "Arthur", "ArtoriaFace", "CostumeOwning", "Dragon", "Humanoid", "King", "Riding", "RoundTableKnight", "Servant", "SevenClasses", "WeakEnumaElish"],
+      "personalSkills": [
+        {
+          "name": "Mana Burst (Reverse Scale) A",
+          "slot": "S1",
+          "effects": [
+            {
+              "type": "busterPerformUp",
+              "target": "self",
+              "durationAttacks": 3,
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+            },
+            {
+              "type": "buffOnAttack",
+              "target": "self",
+              "durationAttacks": 3,
+              "durationTurns": 3,
+              "scalingType": "fixed",
+              "subEffects": [
+                {
+                  "type": "npCharge",
+                  "target": "self",
+                  "value": 10,
+                  "scalingType": "fixed",
+                  "metaString": "per_enemy_hit",
+                  "executionTiming": "after_damage"
+                }
+              ]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        },
+        {
+          "name": "Twilight Star A",
+          "slot": "S2",
+          "effects": [
+            {
+              "type": "npCharge",
+              "target": "self",
+              "value": 20,
+              "scalingType": "fixed"
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        },
+        {
+          "name": "Charisma E",
+          "slot": "S3",
+          "effects": [
+            {
+              "type": "atkUp",
+              "target": "party",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [6, 6.6, 7.2, 7.8, 8.4, 9, 9.6, 10.2, 10.8, 12]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        }
+      ],
+      "noblePhantasm": {
+        "nameNP": "Excalibur Morgan",
+        "cardType": "Buster",
+        "DamageCategory": [
+          {
+            "cardType": "Buster",
+            "power": {
+              "target": "all_enemies",
+              "hitCount": 3,
+              "hitDistribution": [16, 33, 51],
+              "scalingType": "npLevel",
+              "damageValues": [450, 550, 600, 625, 650]
+            }
+          }
+        ],
+        "effects": [
+          {
+            "type": "npCharge",
+            "target": "self",
+            "scalingType": "oc",
+            "values": [10, 15, 20, 25, 30]
+          }
+        ]
+      }
+},
+    
+{
+      "id": "0004",
+      "name": "Artoria Pendragon (Lily)",
+      "className": "Saber",
+      "baseAtk": 7726,
+      "baseHP": 10623,
+      "baseStarGen": 10.0,
+      "baseNpGen": 0.86,
+      "attribute": "Earth",
+      "traits": ["Lawful", "Good", "Female", "Arthur", "ArtoriaFace", "CostumeOwning", "Dragon", "Humanoid", "King", "Riding", "Servant", "SevenClasses", "WeakEnumaElish"],
+  
+      "classSkills": [
+        {
+          "effects": [
+            {
+              "type": "quickPerformUp",
+              "target": "self",
+              "value": 6,
+              "scalingType": "fixed",
+              "overrideRemovable": false
+            }
+          ]
+        }
+      ],
+      "personalSkills": [
+        {
+          "name": "Path Where Flowers Fall A",
+          "slot": "S1",
+          "effects": [
+            {
+              "type": "npCharge",
+              "target": "self",
+              "scalingType": "skillLevel",
+              "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 20]
+            },
+            {
+              "type": "healRateUp",
+              "target": "self",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        },
+        {
+          "name": "Mana Burst A",
+          "slot": "S2",
+          "effects": [
+            {
+              "type": "busterPerformUp",
+              "target": "self",
+              "durationTurns": 1,
+              "scalingType": "skillLevel",
+              "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        },
+        {
+          "name": "Journey of the Flowers EX",
+          "slot": "S3",
+          "effects": [
+            {
+              "type": "npGenUp",
+              "target": "party",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [100, 110, 120, 130, 140, 150, 160, 170, 180, 200]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        }
+      ],
+      "noblePhantasm": {
+        "nameNP": "Caliburn",
+        "cardType": "Buster",
+        "DamageCategory": [
+          {
+            "cardType": "Buster",
+            "power": {
+              "target": "all_enemies",
+              "hitCount": 8,
+              "hitDistribution": [2, 5, 8, 11, 13, 16, 19, 26],
+              "scalingType": "npLevel",
+              "damageValues": [400, 550, 625, 662.5, 700]
+            }
+          }
+        ],
+        "effects": [
+          {
+            "type": "heal",
+            "target": "self",
+            "scalingType": "oc",
+            "values": [2000, 3000, 4000, 5000, 6000]
+          }
+        ]
+      }
+},
+    
+{
+  "id": "0005",
+  "name": "Nero Claudius",
+  "className": "Saber",
+  "baseAtk": 9449,
+  "baseHP": 11753,
+  "baseStarGen": 10.1,
+  "baseNpGen": 0.84,
+  "attribute": "Man",
+  "traits": [
+    "Chaotic", "Good", "Female", "ArtoriaFace", "CostumeOwning", "Humanoid", "King", "Riding", "Roman", "Servant", "SevenClasses", "WeakEnumaElish"
+  ],
+  "classSkills": [
+    {
+      "effects": [
+        {
+          "type": "quickPerformUp",
+          "target": "self",
+          "scalingType": "fixed",
+          "value": 8,
+          "overrideRemovable": false
+        }
+      ]
+    }
+  ],
+  "personalSkills": [
+    {
+      "name": "Goblet of Wealth B",
+      "slot": "S1",
+      "effects": [
+        {
+          "type": "npCharge",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 30]
+        },
+        {
+          "type": "artsPerformUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "applyCondition": {
+              "fieldCondition": ["Waterside"]
+            },
+          "values": [15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 20]
+        },
+        {
+          "type": "heal",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [1250, 1325, 1400, 1475, 1550, 1625, 1700, 1775, 1850, 2000]
+        }
+      ],
+      "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+    },
+    {
+      "name": "Imperial Privilege A",
+      "slot": "S2",
+      "effects": [
+        {
+          "Clovis": {"scalingType": "fixed", "value": 60},
+          "type": "atkUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [22, 24.2, 26.4, 28.6, 30.8, 33, 35.2, 37.4, 39.6, 44]
+        },
+        {
+          "Clovis": {"scalingType": "fixed", "value": 60},
+          "type": "defUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [22, 24.2, 26.4, 28.6, 30.8, 33, 35.2, 37.4, 39.6, 44]
+         },
+        {
+          "type": "heal",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [1200, 1420, 1640, 1860, 2080, 2300, 2520, 2740, 2960, 3400]
+        },
+        {
+          "type": "artsPerformUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 30]
+        }
+      ],
+      "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+    },
+    {
+      "name": "Invictus Spiritus: Thrice, Though I Welcome the Setting Sun EX",
+      "slot": "S3",
+      "effects": [
+        {
+          "type": "buffSuccUp",
+          "target": "self",
+          "durationTurns": 6,
+          "scalingType": "skillLevel",
+          "values": [20, 22, 24, 26, 28, 30, 32, 34, 36, 40]
+        },
+        {
+          "type": "npGenUp",
+          "target": "self",
+          "durationTurns": 6,
+          "scalingType": "skillLevel",
+          "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+        }
+      ],
+      "baseCooldown": [12, 12, 12, 12, 12, 11, 11, 11, 11, 10]
+    }
+  ],
+  "noblePhantasm": {
+    "nameNP": "Laus Saint Claudius",
+    "cardType": "Arts",
+    "DamageCategory": [
+          {
+            "cardType": "Arts",
+            "power": {
+              "target": "all_enemies",
+              "hitCount": 1,
+              "hitDistribution": [100],
+              "scalingType": "npLevel",
+              "damageValues": [600, 750, 825, 862.5, 900]
+            }
+          }
+    ],
+    "effects": [
+      {
+        "type": "defDown",
+        "target": "all_enemies",
+        "scalingType": "oc",
+        "values": [20, 25, 30, 35, 40]
+      }
+    ]
+  }
+},
+    
+{
+  "id": "0006",
+  "name": "Siegfried",
+  "className": "Saber",
+  "baseAtk": 8181,
+  "baseHP": 14165,
+  "baseStarGen": 10.0,
+  "baseNpGen": 0.83,
+  "attribute": "Earth",
+  "traits": [ "Chaotic", "Good", "Male", "Dragon", "DragonSlayer", "Humanoid", "King", "LovedOne", "Riding", "Servant", "WeakEnumaElish", "SummerMode" ],
+  "classSkills": [
+    {
+      "effects": [
+        {
+          "type": "quickPerformUp",
+          "target": "self",
+          "scalingType": "fixed",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "personalSkills": [
+    {
+      "name": "Avaricious Gold A",
+      "slot": "S1",
+      "baseCooldown": [8, 8, 8, 7, 7, 7, 7, 7, 7, 6],
+      "effects": [
+        {
+          "type": "npCharge",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 30]
+        },
+        {
+          "type": "npGenUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [26.3, 27.5, 28.7, 30, 31.2, 32.5, 33.7, 35, 36.2, 37.5]
+        },
+        {
+          "type": "atkUp",
+          "target": "self",
+          "durationTurns": 3,
+          "scalingType": "skillLevel",
+          "values": [25, 25.5, 26, 26.5, 27, 27.5, 28, 28.5, 29, 30]
+        }
+      ]
+    },
+    {
+      "name": "Disengagement A",
+      "slot": "S2",
+      "baseCooldown": [7, 7, 7, 6, 6, 6, 6, 6, 6, 5],
+      "effects": [
+        {
+          "type": "heal",
+          "target": "self",
+          "scalingType": "skillLevel",
+          "values": [1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 2500]
+        }
+      ]
+    },
+    {
+      "name": "Dragon Slayer A++",
+      "slot": "S3",
+      "baseCooldown": [7, 7, 7, 6, 6, 6, 6, 6, 6, 5],
+      "effects": [
+        {
+          "type": "antiDmgUp",
+          "target": "self",
+          "durationTurns": 3,
+          "enemyTargetCondition": {
+            "hasTraits": ["Dragon"]
+          },
+          "scalingType": "skillLevel",
+          "values": [65, 66.5, 68, 69.5, 71, 72.5, 74, 75.5, 77, 80]
+        },
+        {
+          "type": "busterPerformUp",
+          "target": "self",
+          "durationTurns": 1,
+          "scalingType": "skillLevel",
+          "values": [40, 41, 42, 43, 44, 45, 46, 47, 48, 50]
+        }
+      ]
+    }
+  ],
+  "noblePhantasm": {
+    "nameNP": "Balmung",
+    "cardType": "Buster",
+    "DamageCategory": [
+        {
+          "cardType": "Buster",
+          "power": {
+          "target": "all_enemies",
+          "hitCount": 3,
+          "hitDistribution": [16, 33, 51],
+          "scalingType": "npLevel",
+          "damageValues": [400, 500, 550, 575, 600]
+        },
+        "extraDamage": {
+          "dmgAgainst": {
+          "traits": ["Dragon"]
+          },
+          "scalingType": "oc",
+          "values": [150, 162.5, 175, 187.5, 200]
+        }
+      }
+    ],
+    "effects": [
+      {
+        "type": "npGenUp",
+        "target": "self",
+        "scalingType": "fixed",
+        "value": 20
+      }
+    ]
+  }
+},
+    
+{
+  "id": "0007",
+  "name": "Gaius Julius Caesar",
+  "className": "Saber",
+  "baseAtk": 7497,
+  "baseHP": 9595,
+  "baseStarGen": 10.0,
+  "baseNpGen": 1.1,
+  "attribute": "Man",
+  "traits": ["Neutral", "Balanced", "Male", "Divinity", "Humanoid", "King", "LovedOne", "Riding", "Roman", "Servant", "SevenClasses","WeakEnumaElish", "3StarorLower"],
+  "classSkills": [
+    {
+      "effects": [
+        { "type": "quickPerformUp", "target": "self", "scalingType": "fixed", "value": 8 }
+      ]
+    },
+    {
+      "effects": [
+        { "type": "dmgAdd", "target": "self", "scalingType": "fixed", "value": 125 }
+      ]
+    }
+  ],
+  "personalSkills": [
+    {
+      "name": "Military Tactics B",
+      "slot": "S1",
+      "baseCooldown": [7, 7, 7, 6, 6, 6, 6, 6, 6, 5],
+      "effects": [
+        { "type": "npDmgUp", "target": "party", "durationTurns": 1, "scalingType": "skillLevel", "values": [13.5, 14, 14.5, 15, 15.5, 16.2, 16.7, 17.2, 17.7, 18] }
+      ]
+    },
+    {
+      "name": "Charisma C",
+      "slot": "S2",
+      "baseCooldown": [7, 7, 7, 6, 6, 6, 6, 6, 6, 5],
+      "effects": [
+        { "type": "atkUp", "target": "party", "durationTurns": 3, "scalingType": "skillLevel", "values": [12, 12.4, 12.8, 13.2, 13.6, 14.4, 14.8, 15.2, 15.6, 16] }
+      ]
+    },
+    {
+      "name": "Incitement EX",
+      "slot": "S3",
+      "baseCooldown": [7, 7, 7, 6, 6, 6, 6, 6, 6, 5],
+      "effects": [
+        { "type": "starGenUp", "target": "one_ally", "durationTurns": 3, "scalingType": "skillLevel", "values": [75, 77.5, 80, 82.5, 85, 90, 92.5, 95, 97.5, 100] },
+        { "type": "defDown", "target": "one_ally", "durationTurns": 3, "scalingType": "fixed", "value": 20 }
+      ]
+    }
+  ],
+  "noblePhantasm": {
+    "nameNP": "Crocea Mors",
+    "cardType": "Quick",
+    "DamageCategory": [
+      {
+        "cardType": "Quick",
+        "power": {
+          "target": "one_enemy",
+          "hitCount": 10,
+          "hitDistribution": [1, 3, 5, 7, 9, 10, 12, 14, 16, 23],
+          "scalingType": "npLevel",
+          "damageValues": [1600, 2000, 2200, 2300, 2400]
+        }
+      }
+    ]
+  }
+},
+
+{
+      "id": "0254",
+      "name": "Jason",
+      "className": "Saber",
+      "baseAtk": 5457,
+      "baseHP": 7575,
+      "baseStarGen": 10.0,
+      "baseNpGen": 0.37,
+      "attribute": "Earth",
+      "traits": ["Lawful", "Good", "Male", "ArgoRelated", "GreekMythologyMale", "Humanoid", "Riding", "Servant", "SevenClasses"],
+      "classSkills": [
+        {
+          "effects": [
+            {
+              "type": "quickPerformUp",
+              "cardType": "Quick",
+              "target": "self",
+              "scalingType": "fixed",
+              "value": 8
+            }
+          ]
+        }
+      ],
+      "personalSkills": [
+        {
+          "name": "The Requested Golden Fleece",
+          "slot": "S1",
+          "effects": [
+            {
+              "type": "heal",
+              "target": "one_ally",
+              "scalingType": "skillLevel",
+              "values": [1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 2000]
+            }
+          ],
+          "baseCooldown": [6, 6, 6, 6, 6, 5, 5, 5, 5, 4]
+        },
+        {
+          "name": "Flashing at the Tigers Den A",
+          "slot": "S2",
+          "effects": [
+            {
+              "type": "evasion",
+              "target": "one_ally",
+              "durationAttacks": 1,
+              "durationTurns": 1,
+              "scalingType": "fixed"
+            },
+            {
+              "type": "defDown",
+              "target": "self",
+              "durationTurns": 1,
+              "scalingType": "fixed",
+              "value": 20
+            }
+          ],
+          "baseCooldown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6]
+        },
+        {
+          "name": "Conquering the Distant Sea Routes with Friends B++",
+          "slot": "S3",
+          "effects": [
+            {
+              "type": "atkUp",
+              "target": "party",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 20]
+            },
+            {
+              "type": "npCharge",
+              "target": "except_self",
+              "scalingType": "skillLevel",
+              "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 20],
+              "applyCondition": {
+                  "hasTraits": ["ArgoRelated"]
+                }
+            },
+            {
+              "type": "starGenUp",
+              "target": "except_self",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [10, 12, 14, 16, 18, 20, 22, 25, 28, 30],
+              "applyCondition": {
+                  "hasTraits": ["ArgoRelated"]
+                }
+            }
+          ],
+          "baseCooldown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6]
+        }
+      ],
+      "noblePhantasm": {
+        "nameNP": "Astrapste Argo",
+        "cardType": "Arts",
+        "effects": [
+          {
+            "type": "starRegen",
+            "target": "self",
+            "durationTurns": 3,
+            "scalingType": "fixed",
+            "value": 20
+          },
+          {
+            "type": "artsPerformUp",
+            "cardType": "Arts",
+            "target": "self",
+            "durationTurns": 3,
+            "scalingType": "oc",
+            "values": [20, 25, 30, 35, 40]
+          }
+        ],
+         "DamageCategory": [
+          {
+            "cardType": "Arts",
+            "power": {
+              "target": "all_enemies", 
+              "hitCount": 5,
+              "hitDistribution": [6, 13, 20, 26, 35],
+              "scalingType": "npLevel",
+              "damageValues": [600, 750, 825, 862.5, 900]
+            }
+          }
+        ]
+      }
+        
+},
+
+{
+      "id": "0284",
+      "name": "Artoria Caster",
+      "className": "Caster",
+      "baseAtk": 10546,
+      "baseHP": 14406,
+      "baseStarGen": 11.0,
+      "baseNpGen": 0.54,
+      "attribute": "Star",
+      "traits": ["Neutral", "Good", "Female", "Arthur", "ArtoriaCaster", "Humanoid", "RoundTableKnight", "Servant", "SevenClasses", "Fae"],
+      "classSkills": [
+        {
+          "effects": [
+            {
+              "type": "artsPerformUp",
+              "cardType": "Arts",
+              "target": "self",
+              "scalingType": "fixed",
+              "value": 12
+            }
+          ]
+        }
+      ],
+      "personalSkills": [
+        {
+          "name": "Charisma of Hope B",
+          "slot": "S1",
+          "effects": [
+            {
+              "type": "atkUp",
+              "target": "party",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 20]
+            },
+            {
+              "type": "npCharge",
+              "target": "party",
+              "scalingType": "skillLevel",
+              "values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 30]
+            }
+          ],
+          "baseCooldown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6]
+        },
+        {
+          "name": "Protection of the Lake A",
+          "slot": "S2",
+          "effects": [
+            {
+              "type": "npCharge",
+              "target": "one_ally",
+              "scalingType": "skillLevel",
+              "values": [10, 11, 12, 13, 14, 15, 16, 17, 18, 20]
+            },
+            {
+              "type": "npGenUp",
+              "target": "party",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [20, 21, 22, 23, 24, 25, 26, 27, 28, 30]
+            }
+          ],
+          "baseCooldown": [7, 7, 7, 7, 7, 6, 6, 6, 6, 5]
+        },
+        {
+          "name": "Caliburn: Sword of Selection EX",
+          "slot": "S3",
+          "effects": [
+            {
+              "type": "artsPerformUp",
+              "cardType": "Arts",
+              "target": "one_ally",
+              "durationTurns": 3,
+              "scalingType": "skillLevel",
+              "values": [30, 32, 34, 36, 38, 40, 42, 44, 48, 50]
+            },
+            {
+              "type": "antiDmgUp",
+              "target": "one_ally",
+              "durationTurns": 3,
+              "enemyTargetCondition": {
+                "hasTraits": ["ThreatToHumanity"]
+              },
+              "scalingType": "skillLevel",
+              "values": [30, 32, 34, 36, 38, 40, 42, 44, 46, 50]
+          }
+          ],
+          "baseCooldown": [8, 8, 8, 8, 8, 7, 7, 7, 7, 6]
+        }
+      ],
+      "noblePhantasm": {
+        "nameNP": "Around Caliburn",
+        "cardType": "Arts",
+        "effects": [
+          {
+            "type": "atkUp",
+            "target": "party",
+            "scalingType": "npLevel",
+            "values": [30, 40, 45, 47.5, 50]
+          }
+        ]
+      }
+}
+  ]
+}
